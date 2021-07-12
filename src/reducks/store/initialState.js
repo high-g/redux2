@@ -1,5 +1,7 @@
 const initialState = {
-  todos: [],
+  todos: {
+    list: [],
+  },
 }
 
 export default initialState

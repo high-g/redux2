@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useDispatch, useSelector } from 'react-redux'
+import { addTodoAction } from './reducks/todos/actions'
 
 function App() {
+  const dispatch = useDispatch()
+  const state = useSelector((state) => state)
+
+  console.log('state', state)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Todoリスト</h1>
+      <button
+        onClick={() => {
+          dispatch(addTodoAction({ text: 'Add' }))
+        }}
+      >
+        Add
+      </button>
+      <ul>
+        {state.todos.todos.list.map((todo) => {
+          console.log('todo', todo)
+          return <li>{todo.text}</li>
+        })}
+      </ul>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
