@@ -26,7 +26,6 @@ function App() {
       </button>
       <ul>
         {state.todos.list.map((todo, index) => {
-          console.log('todo', todo)
           return <li key={index}>{todo.text}</li>
         })}
       </ul>
