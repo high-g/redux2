@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTodoAction } from './reducks/todos/actions'
+import {
+  addTodoAction,
+  deleteTodoAction,
+} from './reducks/todos/actions'
 
 function App() {
   const [text, setText] = useState('')
   const dispatch = useDispatch()
   const state = useSelector((state) => state.todos)
+
+  console.log('App state', state)
 
   return (
     <div className="App">
@@ -28,7 +33,18 @@ function App() {
       </button>
       <ul>
         {state.todos.list.map((todo, index) => {
-          return <li key={index}>{todo.text}</li>
+          return (
+            <li key={index}>
+              {todo.text}　
+              <button
+                onClick={() => {
+                  dispatch(deleteTodoAction({ index }))
+                }}
+              >
+                x
+              </button>
+            </li>
+          )
         })}
       </ul>
     </div>

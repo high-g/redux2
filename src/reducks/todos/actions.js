@@ -9,3 +9,14 @@ export const addTodoAction = (state) => {
     },
   }
 }
+
+export const DELETE_TODO = 'DELETE_TODO'
+
+export const deleteTodoAction = (state) => {
+  return {
+    type: 'DELETE_TODO',
+    payload: {
+      index: state.index,
+    },
+  }
+}
