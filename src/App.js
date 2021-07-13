@@ -18,8 +18,10 @@ function App() {
       />
       <button
         onClick={() => {
-          dispatch(addTodoAction({ text }))
-          setText('')
+          if (text !== '') {
+            dispatch(addTodoAction({ text }))
+            setText('')
+          }
         }}
       >
         Add
