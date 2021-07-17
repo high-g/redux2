@@ -1,6 +1,7 @@
 import * as Actions from './actions'
 import initialState from '../store/initialState'
 
+// TodosReducer
 export const TodosReducer = (
   state = initialState,
   action,
