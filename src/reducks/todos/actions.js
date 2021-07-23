@@ -1,6 +1,5 @@
 export const ADD_TODO = 'ADD_TODO'
 
-// action
 export const addTodoAction = (state) => {
   return {
     type: 'ADD_TODO',
