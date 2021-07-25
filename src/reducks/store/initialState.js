@@ -4,4 +4,5 @@ const initialState = {
   },
 }
 
+// initial
 export default initialState
